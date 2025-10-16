@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hidden Aura | Hide Secret Messages in Images</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <link rel="website icon" type="png" href="https://github.com/nm-474/Hidden-Aura/blob/main/Hidden%20Aura.jpeg?raw=true">
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white flex flex-col items-center justify-center p-6">
+  <div class="text-center mb-10 animate-pulse">
+    <h1 class="text-5xl font-bold mb-2 text-indigo-400 drop-shadow-lg">Hidden Aura</h1>
+    <p class="text-gray-400">Hide and Reveal Secret Messages with Password Protection 🔒</p>
+  </div>
+
+  <div class="grid lg:grid-cols-2 gap-10 w-full max-w-6xl">
+    <!-- Encode Section -->
+    <div class="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-indigo-600/30 transition hover:scale-[1.02]">
+      <h2 class="text-2xl font-semibold mb-4 text-indigo-300">🔐 Hide Message</h2>
+      <h2 class="text-2xl font-semibold mb-4 text-indigo-300" style="font-size: 20px;">(Please upload the files in jpg & jpeg format only)</h2>
+      <input id="coverImage" type="file" accept="image/*" class="mb-4 w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-indigo-600/60 file:text-white hover:file:bg-indigo-700 cursor-pointer">
+      <textarea id="secretText" placeholder="Enter your secret message..." class="w-full h-32 p-3 rounded-lg bg-gray-900 text-gray-200 border border-gray-700 mb-4 focus:ring-2 focus:ring-indigo-500"></textarea>
+      <input id="password" type="password" placeholder="Enter password" class="w-full p-3 mb-4 rounded-lg bg-gray-900 text-gray-200 border border-gray-700 focus:ring-2 focus:ring-indigo-500">
+      <button onclick="encodeImage()" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 rounded-xl font-semibold transition-all">Hide Message</button>
+      <a id="downloadLink" class="hidden mt-4 block text-center bg-green-600 hover:bg-green-700 py-2 rounded-lg" download="stego_image.png">Download Stego Image</a>
+    </div>
+
+    <!-- Decode Section -->
+    <div class="bg-gray-800/50 backdrop-blur-lg rounded-2xl p-6 shadow-2xl border border-pink-600/30 transition hover:scale-[1.02]">
+      <h2 class="text-2xl font-semibold mb-4 text-pink-300">🧩 Reveal Message</h2>
+      <h2 class="text-2xl font-semibold mb-4 text-pink-300" style="font-size: 20px;">(Please upload the files in png format only)</h2>
+      <input id="stegoImage" type="file" accept="image/*" class="mb-4 w-full text-sm text-gray-300 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:bg-pink-600/60 file:text-white hover:file:bg-pink-700 cursor-pointer">
+      <input id="decodePassword" type="password" placeholder="Enter password" class="w-full p-3 mb-4 rounded-lg bg-gray-900 text-gray-200 border border-gray-700 focus:ring-2 focus:ring-pink-500">
+      <button onclick="decodeImage()" class="w-full py-3 bg-pink-600 hover:bg-pink-700 rounded-xl font-semibold transition-all">Reveal Message</button>
+      <p id="revealedMessage" class="mt-4 p-3 bg-gray-900 rounded-lg text-green-400 text-sm break-words"></p>
+    </div>
+  </div>
+
+  <footer class="mt-10 text-gray-500 text-sm">© Copyright 2025 Hidden Aura | All Rights Reserved</footer>
+  <footer class="mt-10 text-gray-500 text-sm">Developed by <a href="https://www.linkedin.com/in/narayana474/">Narayana Munganda</a></footer>
+  <script src="app.js"></script>
+</body>
+</html>
