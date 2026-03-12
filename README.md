@@ -28,10 +28,6 @@ To get a local copy up and running, follow these simple steps:
 - A modern web browser.
 - A local server (like Live Server for VS Code) or Node.js installed (if using build tools).
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/your-username/hidden-aura.git](https://github.com/your-username/hidden-aura.git)
 
 ## Steps
 1. Open `index.html`.
